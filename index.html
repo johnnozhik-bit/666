@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модальные окна и меню</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">NOVA</div>
+      <button class="hamburger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" aria-label="Основное меню">
+        <a href="#features">Возможности</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <h1>Продолжаем собирать модальные окна</h1>
+        <p>Пример двух модальных окон с плавным появлением и закрытием.</p>
+        <div class="actions">
+          <button class="btn" data-modal-open="signup">Открыть форму</button>
+          <button class="btn btn-outline" data-modal-open="subscribe">Открыть подписку</button>
+        </div>
+      </section>
+
+      <section class="cards" id="features">
+        <article>
+          <h2>Список задач</h2>
+          <p>Минимальный интерфейс для демонстрации работы модалок.</p>
+        </article>
+        <article>
+          <h2>Анимации</h2>
+          <p>Мягкое затемнение фона и фокус на контенте.</p>
+        </article>
+      </section>
+    </main>
+
+    <div class="modal-overlay" data-modal-close></div>
+
+    <div class="modal" data-modal="signup" role="dialog" aria-modal="true" aria-labelledby="signup-title" aria-hidden="true">
+      <div class="modal__content">
+        <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">×</button>
+        <h2 id="signup-title">Быстрая заявка</h2>
+        <p>Оставьте контакты, и мы пришлём детали.</p>
+        <form class="modal__form">
+          <label>
+            Имя
+            <input type="text" placeholder="Алина" />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="name@email.com" />
+          </label>
+          <button class="btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="subscribe" role="dialog" aria-modal="true" aria-labelledby="subscribe-title" aria-hidden="true">
+      <div class="modal__content">
+        <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">×</button>
+        <h2 id="subscribe-title">Подписка на новости</h2>
+        <p>Получайте раз в месяц подборку лучших кейсов.</p>
+        <div class="modal__actions">
+          <button class="btn" type="button">Подписаться</button>
+          <button class="btn btn-outline" type="button" data-modal-close>Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
